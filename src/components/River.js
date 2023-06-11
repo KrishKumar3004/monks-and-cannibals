@@ -2,7 +2,7 @@ import React from "react";
 import Cannibal from "./Cannibal";
 import Monk from "./Monk";
 import Boat from "./Boat";
-
+import "./river.css";
 const River = (props) => {
   const {
     moveBoat,
@@ -12,7 +12,7 @@ const River = (props) => {
     moveBackMonk,
   } = props;
   return (
-    <div>
+    <div className="moveAni" style={{ position: "absolute" }}>
       <Boat moveBoat={moveBoat} />
       {Array(cannibalOnBoat)
         .fill()

@@ -1,0 +1,16 @@
+.moveAni {
+  position: relative;
+  animation-name: boat1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+/* keyframes to move boat from left to right */
+@keyframes boat1 {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}

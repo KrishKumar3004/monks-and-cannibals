@@ -5,7 +5,7 @@ import Monk from "./Monk";
 const Left = (props) => {
   const { moveCannibal, moveMonk, cannibalLeft, monkLeft } = props;
   return (
-    <div>
+    <div style={{ position: "absolute", bottom: 0 }}>
       {Array(cannibalLeft)
         .fill()
         .map((_, i) => (
