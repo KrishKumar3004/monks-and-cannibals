@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Cannibal from "./Cannibal";
 import Monk from "./Monk";
 import Boat from "./Boat";
-import "./river.css";
+
 const River = (props) => {
   const {
     moveBoat,
@@ -12,18 +12,23 @@ const River = (props) => {
     moveBackMonk,
   } = props;
   return (
-    <div className="moveAni" style={{ position: "absolute" }}>
-      <Boat moveBoat={moveBoat} />
-      {Array(cannibalOnBoat)
-        .fill()
-        .map((_, i) => (
-          <Cannibal key={i} moveCannibal={moveBackCannibal} />
-        ))}
-      {Array(monkOnBoat)
-        .fill()
-        .map((_, i) => (
-          <Monk key={i} moveMonk={moveBackMonk} />
-        ))}
+    <div className="middle">
+      <div
+        className={`middle-items ${
+          props.boatLeft ? "left-boat" : "right-boat"
+        }`}
+      >
+        <Boat
+          moveBoat={moveBoat}
+          boatLeft={props.boatLeft}
+          cannibalOnBoat={cannibalOnBoat}
+          monkOnBoat={monkOnBoat}
+          moveBackCanniback={moveBackCannibal}
+          moveBackMonk={moveBackMonk}
+        />
+      </div>
+
+      <div className="river"></div>
     </div>
   );
 };

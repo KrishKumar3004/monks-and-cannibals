@@ -1,15 +1,9 @@
 import React from "react";
-
+import CannibalAvatar from "./CannibalAvatar";
 const Cannibal = (props) => {
   return (
-    <div onClick={props.moveCannibal} style={{ display: "inline" }}>
-      <img
-        className="mx-1"
-        src="cannibal.png"
-        height="100%"
-        width="15%"
-        alt=""
-      />
+    <div onClick={props.moveCannibal}>
+      <CannibalAvatar />
     </div>
   );
 };

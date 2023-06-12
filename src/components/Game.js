@@ -117,50 +117,38 @@ function Game() {
     }
   };
   return (
-    <div className="container" style={{ height: "100vh" }}>
-      <Alert alert={alert} />
-      <h1 style={{ textAlign: "center" }}>Three Monks and Three Cannibles</h1>
-      <div className="row" style={{ height: "35%" }}>
-        <div className="col md-4" style={{ position: "relative" }}>
-          <Left
-            monkLeft={monkLeft}
-            cannibalLeft={cannibalLeft}
-            moveCannibal={() => {
-              if (boatLeft) moveCannibal();
-            }}
-            moveMonk={() => {
-              if (boatLeft) moveMonk();
-            }}
-          />
-        </div>
-        <div className="col md-4" style={{ position: "relative" }}>
-          <River
-            moveBoat={moveBoat}
-            moveBackCannibal={moveBackCannibal}
-            moveBackMonk={moveBackMonk}
-            cannibalOnBoat={cannibalOnBoat}
-            monkOnBoat={monkOnBoat}
-          />
-        </div>
-        <div className="col md-4" style={{ position: "relative" }}>
-          <Right
-            monkRight={monkRight}
-            cannibalRight={cannibalRight}
-            moveCannibal={() => {
-              if (!boatLeft) moveCannibal();
-            }}
-            moveMonk={() => {
-              if (!boatLeft) moveMonk();
-            }}
-          />
-        </div>
-      </div>
-      <div className="row" style={{ height: "25%" }}>
-        <div className="col md-4" style={{ backgroundColor: "#16FF00" }}></div>
-        <div className="col md-4" style={{ backgroundColor: "#00C4FF" }}></div>
-        <div className="col md-4" style={{ backgroundColor: "#16FF00" }}></div>
-      </div>
-    </div>
+    <>
+      <Left
+        monkLeft={monkLeft}
+        cannibalLeft={cannibalLeft}
+        moveCannibal={() => {
+          if (boatLeft) moveCannibal();
+        }}
+        moveMonk={() => {
+          if (boatLeft) moveMonk();
+        }}
+      />
+
+      <River
+        moveBoat={moveBoat}
+        moveBackCannibal={moveBackCannibal}
+        moveBackMonk={moveBackMonk}
+        cannibalOnBoat={cannibalOnBoat}
+        monkOnBoat={monkOnBoat}
+        boatLeft={boatLeft}
+      />
+
+      <Right
+        monkRight={monkRight}
+        cannibalRight={cannibalRight}
+        moveCannibal={() => {
+          if (!boatLeft) moveCannibal();
+        }}
+        moveMonk={() => {
+          if (!boatLeft) moveMonk();
+        }}
+      />
+    </>
   );
 }
 

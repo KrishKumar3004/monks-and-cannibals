@@ -1,14 +1,10 @@
 import React from "react";
+import MonkAvatar from "./MonkAvatar";
 
 const Monk = (props) => {
   return (
-    <div
-      onClick={props.moveMonk}
-      style={{
-        display: "inline",
-      }}
-    >
-      <img src="monk.png" height="100%" width="15%" alt="" />
+    <div onClick={props.moveMonk}>
+      <MonkAvatar />
     </div>
   );
 };

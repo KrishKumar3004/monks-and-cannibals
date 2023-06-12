@@ -1,21 +1,23 @@
 import React from "react";
 import Cannibal from "./Cannibal";
 import Monk from "./Monk";
-
 const Left = (props) => {
   const { moveCannibal, moveMonk, cannibalLeft, monkLeft } = props;
   return (
-    <div style={{ position: "absolute", bottom: 0 }}>
-      {Array(cannibalLeft)
-        .fill()
-        .map((_, i) => (
-          <Cannibal key={i} moveCannibal={moveCannibal} />
-        ))}
-      {Array(monkLeft)
-        .fill()
-        .map((_, i) => (
-          <Monk key={i} moveMonk={moveMonk} />
-        ))}
+    <div className="left">
+      <div className="left-items">
+        {Array(cannibalLeft)
+          .fill()
+          .map((_, i) => (
+            <Cannibal key={i} moveCannibal={moveCannibal} />
+          ))}
+        {Array(monkLeft)
+          .fill()
+          .map((_, i) => (
+            <Monk key={i} moveMonk={moveMonk} />
+          ))}
+      </div>
+      <div className="land"></div>
     </div>
   );
 };
