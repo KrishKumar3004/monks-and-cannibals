@@ -1,8 +1,8 @@
 import React from "react";
-import CannibalAvatar from "./CannibalAvatar";
+import CannibalAvatar from "./svgComponents/CannibalAvatar";
 const Cannibal = (props) => {
   return (
-    <div onClick={props.moveCannibal}>
+    <div className="cannibal-avatar" onClick={props.moveCannibal}>
       <CannibalAvatar />
     </div>
   );

@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Alert.css"; // Import CSS file for styling
 
-function Alert(props) {
-  const capitalize = (word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
+const Alert = (props) => {
+  const handleDismiss = () => {
+    props.setAlert(null);
   };
   return (
     props.alert && (
-      <div>
-        <div className={`alert alert-${props.alert.type}`} role="alert">
-          {capitalize(props.alert.type)} : {props.alert.message}
+      <div className="alert alert-content">
+        <div className="alert-icon alert-icon-left">
+          <span className="alert-icon-inner"></span>
         </div>
+        <p className="alert-message">{props.alert.message}</p>
+        <button
+          className="alert-dismiss"
+          onClick={() => {
+            handleDismiss();
+            props.reset();
+          }}
+        >
+          <span>&times;</span>
+        </button>
       </div>
     )
   );
-}
+};
 
 export default Alert;

@@ -13,19 +13,20 @@ const River = (props) => {
   } = props;
   return (
     <div className="middle">
-      <div
-        className={`middle-items ${
-          props.boatLeft ? "left-boat" : "right-boat"
-        }`}
-      >
-        <Boat
-          moveBoat={moveBoat}
-          boatLeft={props.boatLeft}
-          cannibalOnBoat={cannibalOnBoat}
-          monkOnBoat={monkOnBoat}
-          moveBackCanniback={moveBackCannibal}
-          moveBackMonk={moveBackMonk}
-        />
+      <div className="middle-items">
+        <div className={`${props.boatLeft ? "left-boat" : "right-boat"}`}>
+          {Array(cannibalOnBoat)
+            .fill()
+            .map((_, i) => (
+              <Cannibal key={i} moveCannibal={moveBackCannibal} />
+            ))}
+          {Array(monkOnBoat)
+            .fill()
+            .map((_, i) => (
+              <Monk key={i} moveMonk={moveBackMonk} />
+            ))}
+        </div>
+        <Boat moveBoat={moveBoat} boatLeft={props.boatLeft} />
       </div>
 
       <div className="river"></div>

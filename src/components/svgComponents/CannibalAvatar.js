@@ -9,8 +9,8 @@ const CannibalAvatar = (props) => (
     viewBox="0 0 504.123 504.123"
     style={{
       enableBackground: "new 0 0 504.123 504.123",
-      height: "80px",
-      width: "80px",
+      height: "100%",
+      width: "100%",
     }}
     xmlSpace="preserve"
     {...props}

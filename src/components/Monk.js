@@ -1,9 +1,9 @@
 import React from "react";
-import MonkAvatar from "./MonkAvatar";
+import MonkAvatar from "./svgComponents/MonkAvatar";
 
 const Monk = (props) => {
   return (
-    <div onClick={props.moveMonk}>
+    <div className="monk-avatar" onClick={props.moveMonk}>
       <MonkAvatar />
     </div>
   );

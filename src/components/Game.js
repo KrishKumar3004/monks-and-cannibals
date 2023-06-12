@@ -11,10 +11,6 @@ function Game() {
       message: message,
       type: type,
     });
-    setTimeout(() => {
-      reset();
-      setAlert(null);
-    }, 3000);
   };
 
   const [cannibalLeft, setCannibalLeft] = useState(3);
@@ -53,6 +49,7 @@ function Game() {
     setBoat(true);
     setCannibalOnBoat(0);
     setMonkOnBoat(0);
+    setAlert(null);
   };
 
   const moveCannibal = () => {
@@ -118,14 +115,16 @@ function Game() {
   };
   return (
     <>
+      <Alert alert={alert} setAlert={setAlert} reset={reset} />
+      <button className="reset-button" onClick={reset}></button>
       <Left
         monkLeft={monkLeft}
         cannibalLeft={cannibalLeft}
         moveCannibal={() => {
-          if (boatLeft) moveCannibal();
+          if (boatLeft && alert === null) moveCannibal();
         }}
         moveMonk={() => {
-          if (boatLeft) moveMonk();
+          if (boatLeft && alert === null) moveMonk();
         }}
       />
 
@@ -142,10 +141,10 @@ function Game() {
         monkRight={monkRight}
         cannibalRight={cannibalRight}
         moveCannibal={() => {
-          if (!boatLeft) moveCannibal();
+          if (!boatLeft && alert === null) moveCannibal();
         }}
         moveMonk={() => {
-          if (!boatLeft) moveMonk();
+          if (!boatLeft && alert === null) moveMonk();
         }}
       />
     </>

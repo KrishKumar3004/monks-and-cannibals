@@ -1,8 +1,7 @@
 import * as React from "react";
 const BoatSVG = (props) => (
   <svg
-    width="150px"
-    height="150px"
+    style={{ maxWidth: "35%", maxHeight: "100%" }}
     viewBox="0 0 128 128"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"

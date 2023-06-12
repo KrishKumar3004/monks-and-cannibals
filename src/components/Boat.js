@@ -1,32 +1,14 @@
 import React from "react";
-import Cannibal from "./Cannibal";
-import Monk from "./Monk";
-import "./boat.css";
 import BoatSVG from "./svgComponents/BoatSVG";
 
 const Boat = (props) => {
-  const {
-    moveBoat,
-    cannibalOnBoat,
-    monkOnBoat,
-    moveBackCannibal,
-    moveBackMonk,
-  } = props;
+  const { moveBoat } = props;
   return (
     <>
-      <div className="mc-on-river">
-        {Array(cannibalOnBoat)
-          .fill()
-          .map((_, i) => (
-            <Cannibal key={i} moveCannibal={moveBackCannibal} />
-          ))}
-        {Array(monkOnBoat)
-          .fill()
-          .map((_, i) => (
-            <Monk key={i} moveMonk={moveBackMonk} />
-          ))}
-      </div>
-      <div onClick={moveBoat} className="boatSVG">
+      <div
+        onClick={moveBoat}
+        className={`${props.boatLeft ? "left-boat" : "right-boat"}`}
+      >
         <BoatSVG />
       </div>
     </>
