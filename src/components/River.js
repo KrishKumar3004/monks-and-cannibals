@@ -14,7 +14,11 @@ const River = (props) => {
   return (
     <div className="middle">
       <div className="middle-items">
-        <div className={`${props.boatLeft ? "left-boat" : "right-boat"}`}>
+        <div
+          className={`mc-on-boat ${
+            props.boatLeft ? "left-boat" : "right-boat"
+          }`}
+        >
           {Array(cannibalOnBoat)
             .fill()
             .map((_, i) => (
@@ -28,7 +32,7 @@ const River = (props) => {
         </div>
         <Boat moveBoat={moveBoat} boatLeft={props.boatLeft} />
       </div>
-
+      <div className="fake-river"></div>
       <div className="river"></div>
     </div>
   );
