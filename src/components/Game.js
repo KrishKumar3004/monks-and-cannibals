@@ -116,7 +116,9 @@ function Game() {
   return (
     <>
       <Alert alert={alert} setAlert={setAlert} reset={reset} />
-      <button className="reset-button" onClick={reset}></button>
+      <button className="reset-button" onClick={reset}>
+        Reset
+      </button>
       <Left
         monkLeft={monkLeft}
         cannibalLeft={cannibalLeft}
