@@ -188,6 +188,7 @@ h1 {
 
 .mc-on-boat {
     position: absolute;
+    width: 100%;
     top: 12%;
 }
 
