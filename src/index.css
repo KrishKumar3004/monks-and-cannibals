@@ -272,7 +272,18 @@ h1 {
     z-index: 10;
 }
 
+.cannibal-avatar :hover,
+.monk-avatar :hover,
+.boat :hover {
+    cursor: pointer;
+    animation: glowing 1.5s infinite;
+    /* Apply the glowing animation */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    /* Initial box shadow */
+}
 
+
+/* Media Queries */
 @media only screen and (max-width: 768px) {
 
     h1 {

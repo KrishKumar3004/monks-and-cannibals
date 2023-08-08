@@ -7,7 +7,7 @@ const Boat = (props) => {
     <>
       <div
         onClick={moveBoat}
-        className={`${props.boatLeft ? "left-boat" : "right-boat"}`}
+        className={`boat ${props.boatLeft ? "left-boat" : "right-boat"}`}
       >
         <BoatSVG />
       </div>
